@@ -1,4 +1,4 @@
-﻿@inject HttpClient httpClient;
+@inject HttpClient httpClient;
 
 <div class="dialog-container">
     <div class="dialog">
@@ -9,10 +9,8 @@
         <form class="dialog-body">
             <div>
                 <label>Size:</label>
-                <input type="range" min="@Pizza.MinimumSize"  max="@Pizza.MaximumSize" step="1"/>
-                <span class="size-label">
-
-                </span>
+                <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size" />
+                <span class="size-label">@Pizza.Size""</span>
             </div>
         </form>
     </div>
