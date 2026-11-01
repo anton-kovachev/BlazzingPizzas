@@ -1,4 +1,8 @@
-﻿using BlazingPizza.Data;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
+
+using BlazingPizza.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +24,6 @@ namespace BlazingPizza.Controllers
         public async Task<ActionResult<List<PizzaSpecial>>> GetSpecialsAsync()
         {
             return (await db.Specials.ToListAsync()).OrderByDescending(x => x.Name).ToList();
-        } 
+        }
     }
 }
